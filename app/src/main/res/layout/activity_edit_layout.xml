@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/color_3399cc"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_scrollFlags="scroll|enterAlways|snap">
+
+            <TextView
+                android:id="@+id/date_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="2017年2月23日"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <!--不加behavior就跟toolbar重叠了-->
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested_scrill_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <!--界面布局-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <!--编辑界面-->
+            <RelativeLayout
+                android:id="@+id/edit_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp">
+
+                <EditText
+                    android:id="@+id/et_diary_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shape_add_diary_title"
+                    android:gravity="center"
+                    android:hint="Title"
+                    android:textStyle="bold" />
+
+                <com.studyxiao.diarynew.widget.LinedEditText
+                    android:id="@+id/et_diary_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/et_diary_title"
+                    android:layout_alignRight="@id/et_diary_title"
+                    android:layout_below="@id/et_diary_title"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shape_add_diary_title"
+                    android:gravity="top"
+                    android:lineSpacingExtra="8dp"
+                    android:minLines="8"
+                    android:paddingBottom="16dp"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/et_diary_content" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <cc.trity.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/fab_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="10dp"
+        fab:fab_addButtonColorNormal="@color/color_3399cc"
+        fab:fab_addButtonSize="normal"
+        fab:fab_expandDirection="right"
+        app:fab_bitmap="@drawable/list_white_24dp">
+
+        <cc.trity.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_edit_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/color_24d63c"
+            fab:fab_icon="@drawable/save"
+            fab:fab_size="normal" />
+
+        <cc.trity.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_icon="@drawable/delete"
+            fab:fab_colorNormal="@color/color_e41c1c"
+            fab:fab_size="normal" />
+
+
+    </cc.trity.floatingactionbutton.FloatingActionsMenu>
+
+</android.support.design.widget.CoordinatorLayout>

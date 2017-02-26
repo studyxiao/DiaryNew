@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">日记</string>
+    <string name="toast_writed">今日已写，点击日记查看。</string>
+    <string name="fab_behavior">com.studyxiao.diarynew.behavior.ScrollAwareFABMenuBehavior</string>
+</resources>
